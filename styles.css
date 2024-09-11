@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 24px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh;
+}
+
+.calculator { /* Should have curved edges */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 10px solid black;
+    background-color: black;
+    border-radius: 8px;
+}
+
+.display {
+    min-width: 100px;
+    min-height: 50px;
+    background-color: #b2b9b7;
+    text-align: right;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+/* Style buttons */
+
+.button-row {
+    display: flex;
+    flex: auto;
+}
+
+.btn { /* Should be curved */
+    min-width: 98px;
+    min-height: 78px;
+    border: 1px solid black;
+    border-radius: 6px;
+    margin-top: 2px;
+    margin-right: 2px;
+    margin-right: 2px;
+}
+
+.zero-btn {
+    flex-grow: 2;
+}
+
+/* Set background colors for buttons */
+
+.operation { 
+    background-color: #FF8F1F;
+}
+
+.number {
+    background-color: #4CAF50;
+
+}
+
+.modifier {
+    background-color: #839eee;
+}
