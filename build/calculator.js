@@ -22,6 +22,9 @@ var Calculator = /** @class */ (function () {
                     _this.handleOperation(value);
                 }
                 else if (target.classList.contains('modifier')) {
+                    // Do not hover over the AC button ater switching from keyboard to clicking button
+                    // This is easily visible in Google Chrome and not Firefox
+                    // This is not an issue in Safari (Webkit)
                     _this.handleModifier(value);
                 }
             }
