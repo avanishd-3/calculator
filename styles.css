@@ -45,7 +45,10 @@ body {
     border-radius: 6px;
     margin-top: 2px;
     margin-right: 2px;
-    margin-right: 2px;
+}
+
+.btn:hover {
+    transform: translateY(-0.1rem); /* Make button pop out when hovering over it */
 }
 
 .zero-btn {
@@ -58,11 +61,21 @@ body {
     background-color: #FF8F1F;
 }
 
+.operation:hover {
+    background-color: #809499;
+}
 .number {
     background-color: #4CAF50;
+}
 
+.number:hover {
+    background-color: #ad6895;
 }
 
 .modifier {
     background-color: #839eee;
+}
+
+.modifier:hover {
+    background-color: #faca6a;
 }
