@@ -5,43 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="./styles.css">
+    <script src= "./build/calculator.js" defer></script>
 </head>
 <body>
     <div class="calculator">
-        <div class="display">0</div>
+        <div class="display" id="display" value>0</div>
         <div class="buttons">
             <div class="button-row">
-                <button class="btn modifier">AC</button>
-                <button class="btn modifier">+/-</button>
-                <button class="btn modifier">%</button>
-                <button class="btn operation">/</button>
+                <button class="btn modifier" value="clear">AC</button>
+                <button class="btn modifier" value="sign">+/-</button>
+                <button class="btn modifier" value="percent">%</button>
+                <button class="btn operation" value="/">/</button>
             </div>
 
             <div class="button-row">
-                <button class="btn number">7</button>
-                <button class="btn number">8</button>
-                <button class="btn number">9</button>
-                <button class="btn operation">*</button>
+                <button class="btn number" value="7">7</button>
+                <button class="btn number" value="8">8</button>
+                <button class="btn number" value="9">9</button>
+                <button class="btn operation" value="*">*</button>
             </div>
 
             <div class="button-row">
-                <button class="btn number">4</button>
-                <button class="btn number">5</button>
-                <button class="btn number">6</button>
-                <button class="btn operation">-</button>
+                <button class="btn number" value="4">4</button>
+                <button class="btn number" value="5">5</button>
+                <button class="btn number" value="6">6</button>
+                <button class="btn operation" value="-">-</button>
             </div>
 
             <div class="button-row">
-                <button class="btn number">1</button>
-                <button class="btn number">2</button>
-                <button class="btn number">3</button>
-                <button class="btn operation">+</button>
+                <button class="btn number" value="1">1</button>
+                <button class="btn number" value="2">2</button>
+                <button class="btn number" value="3">3</button>
+                <button class="btn operation" value="+">+</button>
             </div>
 
             <div class="button-row">
-                <button class="btn zero-btn number">0</button>
-                <button class="btn number">.</button>
-                <button class="btn operation">=</button>
+                <button class="btn zero-btn number" value="0">0</button>
+                <button class="btn number" value=".">.</button>
+                <button class="btn operation equals" value="=">=</button>
             </div> 
         </div>
     </div>
