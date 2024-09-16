@@ -61,14 +61,14 @@ body {
     background-color: #FF8F1F;
 }
 
-.operation:hover {
+.operation:active {
     background-color: #809499;
 }
 .number {
     background-color: #4CAF50;
 }
 
-.number:hover {
+.number:active {
     background-color: #ad6895;
 }
 
@@ -76,6 +76,6 @@ body {
     background-color: #839eee;
 }
 
-.modifier:hover {
+.modifier:active {
     background-color: #faca6a;
 }
