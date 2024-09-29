@@ -4,6 +4,8 @@ Written with Vanilla CSS and Typescript.
 
 Access at [https://avanishd-3.github.io/javascript-calculator/](https://avanishd-3.github.io/javascript-calculator/)
 
+Do modify the logic, edit the TS file (compiles to JS)
+
 Notes:
 
 For Chrome and Firefox, do not hover over the AC button after switching from keyboard to clicking button.
