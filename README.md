@@ -2,9 +2,7 @@ Themed hand-held calculator with clickable buttons and keyboard support.
 
 Written with Vanilla CSS and Typescript.
 
-Access at [https://avanishd-3.github.io/javascript-calculator/](https://avanishd-3.github.io/javascript-calculator/)
-
-Do modify the logic, edit the TS file (compiles to JS)
+To modify the logic, edit the TS file (compiles to JS)
 
 Notes:
 
