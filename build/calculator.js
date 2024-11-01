@@ -1,39 +1,39 @@
-var Calculator = /** @class */ (function () {
-    function Calculator() {
-        this.currentValue = '0';
-        this.previousValue = '';
-        this.operation = null;
-        this.shouldResetDisplay = false;
+"use strict";
+class Calculator {
+    display;
+    currentValue = '0';
+    previousValue = '';
+    operation = null;
+    shouldResetDisplay = false;
+    constructor() {
         this.display = document.getElementById('display');
         this.addEventListeners();
     }
-    Calculator.prototype.addEventListeners = function () {
-        var _this = this;
-        var _a;
+    addEventListeners() {
         // Add event listener for clicking
-        (_a = document.querySelector('.buttons')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', function (e) {
-            var target = e.target;
+        document.querySelector('.buttons')?.addEventListener('click', (e) => {
+            const target = e.target;
             if (target.matches('button')) {
-                var value = target.value;
+                const value = target.value;
                 if (target.classList.contains('number')) {
-                    _this.handleNumber(value);
+                    this.handleNumber(value);
                 }
                 else if (target.classList.contains('operation')) {
-                    _this.handleOperation(value);
+                    this.handleOperation(value);
                 }
                 else if (target.classList.contains('modifier')) {
-                    // Do not hover over the AC button ater switching from keyboard to clicking button
+                    // Do not hover over the AC button after switching from keyboard to clicking button
                     // This is easily visible in Google Chrome and not Firefox
                     // This is not an issue in Safari (Webkit)
-                    _this.handleModifier(value);
+                    this.handleModifier(value);
                 }
             }
         });
         // Add event listener for keyboard inputs
         document.addEventListener('keydown', this.handleKeyPress.bind(this));
-    };
-    Calculator.prototype.handleKeyPress = function (e) {
-        var key = e.key;
+    }
+    handleKeyPress(e) {
+        const key = e.key;
         if (/^[0-9.]/.test(key)) {
             this.handleNumber(key);
         }
@@ -52,8 +52,8 @@ var Calculator = /** @class */ (function () {
         else if (key === 'Backspace') {
             this.handleBackspace();
         }
-    };
-    Calculator.prototype.handleNumber = function (num) {
+    }
+    handleNumber(num) {
         if (this.shouldResetDisplay) {
             this.currentValue = num;
             this.shouldResetDisplay = false;
@@ -74,8 +74,8 @@ var Calculator = /** @class */ (function () {
             }
         }
         this.updateDisplay();
-    };
-    Calculator.prototype.handleOperation = function (op) {
+    }
+    handleOperation(op) {
         if (op === '=') {
             this.calculate();
         }
@@ -87,8 +87,8 @@ var Calculator = /** @class */ (function () {
             this.previousValue = this.currentValue;
             this.shouldResetDisplay = true;
         }
-    };
-    Calculator.prototype.handleModifier = function (mod) {
+    }
+    handleModifier(mod) {
         switch (mod) {
             case 'clear':
                 this.clear();
@@ -100,8 +100,8 @@ var Calculator = /** @class */ (function () {
                 this.percentage();
                 break;
         }
-    };
-    Calculator.prototype.handleBackspace = function () {
+    }
+    handleBackspace() {
         if (this.currentValue.length > 1) {
             this.currentValue = this.currentValue.slice(0, -1);
         }
@@ -109,13 +109,13 @@ var Calculator = /** @class */ (function () {
             this.currentValue = '0';
         }
         this.updateDisplay();
-    };
-    Calculator.prototype.calculate = function () {
+    }
+    calculate() {
         if (this.operation === null || this.previousValue === '')
             return;
-        var prev = parseFloat(this.previousValue);
-        var current = parseFloat(this.currentValue);
-        var result;
+        const prev = parseFloat(this.previousValue);
+        const current = parseFloat(this.currentValue);
+        let result;
         switch (this.operation) {
             case '+':
                 result = prev + current;
@@ -136,27 +136,27 @@ var Calculator = /** @class */ (function () {
         this.operation = null;
         this.previousValue = '';
         this.updateDisplay();
-    };
-    Calculator.prototype.clear = function () {
+    }
+    clear() {
         this.currentValue = '0';
         this.previousValue = '';
         this.operation = null;
         this.updateDisplay();
-    };
-    Calculator.prototype.changeSign = function () {
+    }
+    changeSign() {
         this.currentValue = (parseFloat(this.currentValue) * -1).toString();
         this.updateDisplay();
-    };
-    Calculator.prototype.percentage = function () {
+    }
+    percentage() {
         this.currentValue = (parseFloat(this.currentValue) / 100).toString();
         this.updateDisplay();
-    };
-    Calculator.prototype.updateDisplay = function () {
+    }
+    updateDisplay() {
         this.display.textContent = this.currentValue;
-    };
-    return Calculator;
-}());
+    }
+}
 // Initialize the calculator when the DOM is loaded
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     new Calculator();
 });
+module.exports = Calculator;
