@@ -10,66 +10,78 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 95vh;
+    padding: 10px; /* Added padding for smaller screens */
 }
 
-.calculator { /* Should have curved edges */
+.calculator {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    border: 10px solid black;
-    background-color: black;
-    border-radius: 8px;
+    border: 5px solid #333; /* Reduced border size for smaller screens */
+    background-color: #000; /* Changed to a darker background for better visibility */
+    border-radius: 12px; /* Increased border-radius for a more pronounced curved look */
+    width: 100%;
+    max-width: 400px; /* Set a max-width for larger screens */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
 .display {
-    min-width: 100px;
-    min-height: 50px;
+    width: 100%;
+    padding: 20px;
     background-color: #b2b9b7;
     text-align: right;
     font-size: 48px;
     font-weight: 500;
-    margin-bottom: 2px;
+    border-radius: 8px;
+    word-wrap: break-word; /* Allows text to wrap on smaller screens */
 }
 
-/* Style buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
 
 .button-row {
     display: flex;
-    flex: auto;
+    width: 100%;
 }
 
-.btn { /* Should be curved */
-    min-width: 98px;
-    min-height: 78px;
-    border: 1px solid black;
-    border-radius: 6px;
-    margin-top: 2px;
-    margin-right: 2px;
+.btn {
+    flex: 1;
+    padding: 20px;
+    margin: 2px;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.1s;
 }
 
 .btn:hover {
-    transform: translateY(-0.1rem); /* Make button pop out when hovering over it */
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(0);
 }
 
 .zero-btn {
-    flex-grow: 2;
+    flex: 2;
 }
-
-/* Set background colors for buttons */
 
 .operation { 
     background-color: #FF8F1F;
 }
 
 .operation:active {
-    background-color: #809499;
+    background-color: #e07b1a;
 }
+
 .number {
     background-color: #4CAF50;
 }
 
 .number:active {
-    background-color: #ad6895;
+    background-color: #3e8e41;
 }
 
 .modifier {
@@ -77,5 +89,31 @@ body {
 }
 
 .modifier:active {
-    background-color: #faca6a;
+    background-color: #688eea;
+}
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+    .display {
+        font-size: 36px;
+        padding: 15px;
+    }
+
+    .btn {
+        font-size: 20px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .display {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 18px;
+        padding: 10px;
+    }
 }
